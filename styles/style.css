@@ -1,0 +1,65 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    height: 100vh;
+}
+
+.date-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #565D65;
+    max-height: 8rem;
+
+}
+
+.date-header > i{
+    margin: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    color: #C1C5CA;
+}
+
+.date-header > i:hover{
+    cursor: pointer;
+    background-color: rgb(121, 119, 119);
+}
+
+.days-area{
+    height: 21.5rem;
+    background-color: #EC7E61;
+   
+}
+
+.week-days{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.7rem;
+}
+
+.week-days > h5{
+    margin: 0.4rem;
+}
+
+.month-days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.month-days > h6{
+    text-align: center;
+    margin: 0.4rem 0.2rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+
+}
+
+.month-days > h6:hover{
+    background-color: #565D65;
+    cursor: pointer;
+}
