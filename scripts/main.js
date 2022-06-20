@@ -15,7 +15,7 @@ const monthNames = [
   "December",
 ];
 
-const daysInMonth = (year, month) => {
+const daysInCurrentMonth = (year, month) => {
   return new Date(year, month, 0).getDate();
 };
 
@@ -23,8 +23,17 @@ const currentMonth = date.getMonth() + 1;
 const currentMonthName = monthNames[date.getMonth()];
 const currentYear = date.getFullYear();
 
+
+
+
 const calender = (currMonth, currMonthName, currYear) => {
-  const monthDays = daysInMonth(currYear, currMonth);
+  const firstDayIndex = date.getDay();
+  const lastDayIndex = new Date(currYear, currMonth, 0).getDay();
+  
+  const monthDays = daysInCurrentMonth(currYear, currMonth);
+  const prevMonthDays = daysInCurrentMonth(currYear, currMonth - 1);
+
+  const nextDays = 7 - lastDayIndex;
   const weekDay = document.querySelector(".week-days");
   const monthDay = document.querySelector(".month-days");
 
@@ -38,8 +47,16 @@ const calender = (currMonth, currMonthName, currYear) => {
   }
 
   monthDay.innerHTML = ``;
+  for(x = firstDayIndex; x > 0; x--){
+    monthDay.innerHTML +=`<h6 class="faint">${prevMonthDays - x + 1}</h6>`
+  }
+
   for (let i = 0; i < monthDays; i++) {
     monthDay.innerHTML += `<h6>${i + 1}</h6>`;
+  }
+
+  for(let i = 1; i <= nextDays; i++){
+    monthDay.innerHTML +=`<h6 class="faint">${i}</h6>`
   }
 };
 
@@ -54,5 +71,5 @@ const prevMonth = () => {
   const currentMonthName = monthNames[date.getMonth()];
   calender(date.getMonth() + 1, currentMonthName, currentYear);
 };
-console.log(date.getDay());
+
 calender(currentMonth, currentMonthName, currentYear);
