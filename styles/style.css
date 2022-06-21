@@ -5,6 +5,7 @@ main{
     align-items: center;
     font-family: 'Poppins', sans-serif;
     color: white;
+    background-color: #C1C5CA;
     height: 100vh;
 }
 
@@ -17,7 +18,7 @@ main{
     justify-content: space-between;
     align-items: center;
     background-color: #565D65;
-    max-height: 8rem;
+    /* max-height: 10rem; */
 
 }
 
@@ -33,9 +34,8 @@ main{
 }
 
 .days-area{
-    height: 22rem;
+    height: 21.5rem;
     background-color: #EC7E61;
-   
 }
 
 .week-days{
@@ -52,12 +52,12 @@ main{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 0.3rem;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
 }
 
 .month-days > h6{
     text-align: center;
-    margin: 0.4rem 0.2rem;
+    margin: 0.4rem 0.3rem;
     border-radius: 50%;
     padding: 0.5rem;
 
@@ -69,7 +69,7 @@ main{
 }
 
 .faint{
-    color: rgb(194, 194, 194);
+    color: rgb(210, 207, 207);
 }
 
 .active{
