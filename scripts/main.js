@@ -1,3 +1,10 @@
+window.onload = () => {
+  document.querySelectorAll('.not-active').forEach(item => {
+      item.addEventListener('click', event => { 
+        highlight(event.currentTarget.id);
+      })
+    }); 
+}
 const date = new Date();
 const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const monthNames = [
@@ -22,8 +29,6 @@ const daysInCurrentMonth = (year, month) => {
 const currentMonth = date.getMonth() + 1;
 const currentMonthName = monthNames[date.getMonth()];
 const currentYear = date.getFullYear();
-
-
 
 
 const calender = (currMonth, currMonthName, currYear) => {
@@ -51,8 +56,12 @@ const calender = (currMonth, currMonthName, currYear) => {
     monthDay.innerHTML +=`<h6 class="faint">${prevMonthDays - x + 1}</h6>`
   }
 
-  for (let i = 0; i < monthDays; i++) {
-    monthDay.innerHTML += `<h6>${i + 1}</h6>`;
+  for (let i = 1; i <= monthDays; i++) {
+    if(i === date.getDate() && date.getMonth() === new Date().getMonth()){
+      monthDay.innerHTML += `<h6 class="not-active active" id="${i}">${i}</h6>`;  
+    }else{
+      monthDay.innerHTML += `<h6 class="not-active" id="${i}">${i}</h6>`;
+    }    
   }
 
   for(let i = 1; i <= nextDays; i++){
@@ -73,3 +82,9 @@ const prevMonth = () => {
 };
 
 calender(currentMonth, currentMonthName, currentYear);
+
+const highlight = (elementId) => {
+  console.log(`as${elementId}`);
+  document.querySelector('.active').classList.remove('active'); 
+  document.getElementById(elementId).classList.add('active');
+}
