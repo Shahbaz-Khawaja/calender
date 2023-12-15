@@ -17,7 +17,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #565D65;
+    background-color: #00909a;
     /* max-height: 10rem; */
 
 }
@@ -30,12 +30,12 @@ main{
 
 .date-header > i:hover{
     cursor: pointer;
-    background-color: rgb(121, 119, 119);
+    background-color: #055959;
 }
 
 .days-area{
     height: 21.5rem;
-    background-color: #EC7E61;
+    background-color: #00b5c5;
 }
 
 .week-days{
@@ -64,7 +64,7 @@ main{
 }
 
 .month-days > h6:hover:not(.faint,.active){
-    background-color: #565D65;
+    background-color: #055959;
     cursor: pointer;
 }
 
@@ -74,5 +74,5 @@ main{
 
 .active{
     background-color: white;
-    color: #EC7E61;
+    color: #055959;
 }
